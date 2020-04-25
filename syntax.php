@@ -79,9 +79,15 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         if (isset($pargs['w'])) {
             $opts['width'] = $pargs['w'];
         }
+
         if (isset($pargs['noop'])) {
             $opts['noop'] = true;
         }
+
+        if (isset($pargs['manual'])) {
+            $opts['manual'] = true;
+        }
+
         foreach (['bgcolor', 'color'] as $k) {
             if (isset($pargs[$k]) && $pargs[$k] != "") {
                 $opts[$k] = $pargs[$k];
@@ -121,10 +127,18 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
 
         $buff = array();
         $buff[] = "<b>".$opts['title']."</b><br/>";
-        $buff[] = "<div id=\"stl_cont".$opts['pos']."\" class=\"media\" style=\"width: ".$opts['width']."; height: ".$opts['height'].";\"></div>";
+        $buff[] = "<div id=\"stl_cont".$opts['pos']."\" class=\"media\">";
+        $buff[] = "<a href=\"javascript:init_stl_".$opts['pos']."()\">Show stl</a>";
+        $buff[] = "</div>";
         $buff[] = "<script>";
-        $buff[] = "  var stl_viewer=new StlViewer(";
-        $buff[] = "    document.getElementById(\"stl_cont".$opts['pos']."\"),";
+        $buff[] = "function init_stl_".$opts['pos']."() {";
+        $buff[] = "  var destdiv = document.getElementById(\"stl_cont".$opts['pos']."\");";
+        $buff[] = "  destdiv.innerHTML = \"\";";
+        $buff[] = "  destdiv.style.height = \"".$opts['height']."\";";
+        $buff[] = "  destdiv.style.width = \"".$opts['width']."\";";
+        $buff[] = "  var destdiv = document.getElementById(\"stl_cont".$opts['pos']."\");";
+        $buff[] = "  var stl_viewer".$opts['pos']."=new StlViewer(";
+        $buff[] = "    destdiv,";
         $buff[] = "    {";
         $buff[] = "      load_three_files: \"" . DOKU_URL . "lib/plugins/stlviewer/stlviewer/\",";
         $buff[] = "      auto_rotate: true,";
@@ -139,6 +153,11 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         $buff[] = "      } ]";
         $buff[] = "    }";
         $buff[] = "  );";
+        $buff[] = "}";
+        if (!$opts['manual']) {
+            $buff[] = "init_stl_".$opts['pos']."();";
+        }
+        $buff[] = "";
         $buff[] = "</script>";
         $buff[] = "Download: <a href=\"" . DOKU_URL . ml($opts['id']) . "\">".$opts['id']."</a><br/>";
 

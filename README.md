@@ -8,6 +8,7 @@ Options
 
 Options are URL encoded a=1&b=2 etc
 
+- manual: Do not render automatically, show a link to trigger it
 - noop: disable rendering (link instead)
 - s: size in pixel (defines height and width in one call)
 - h: height in pixel
