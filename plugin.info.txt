@@ -1,0 +1,7 @@
+base stlviewer
+author Damien Degois
+email damien@degois.info
+date 2020-04-24
+name stlviewer
+desc Show stl files using Viewstl.com lib
+url http://www.dokuwiki.org/plugin:stlviewer
