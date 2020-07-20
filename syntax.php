@@ -155,7 +155,7 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         $buff[] = "  );";
         $buff[] = "}";
         if (!$opts['manual']) {
-            $buff[] = "init_stl_".$opts['pos']."();";
+            $buff[] = "document.addEventListener(\"DOMContentLoaded\", init_stl_".$opts['pos'].");";
         }
         $buff[] = "";
         $buff[] = "</script>";
