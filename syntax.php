@@ -120,8 +120,9 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
             return false;
         }
 
+        $mediaurl = DOKU_URL . "lib/exe/fetch.php?media=" . $opts['id'];
         if (isset($opts['noop'])) {
-            $renderer->doc .= "<a href=\"" . DOKU_URL . ml($opts['id']) . "\">".$opts['id']."</a>";
+            $renderer->doc .= "<a href=\"" . $mediaurl . "\">".$opts['id']."</a>";
             return false;
         }
 
@@ -149,7 +150,7 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         $buff[] = "      models: [ {";
         $buff[] = "        id:0,";
         $buff[] = "        color: \"".$opts['color']."\",";
-        $buff[] = "        filename: \"" . DOKU_URL . ml($opts['id']) . "\"";
+        $buff[] = "        filename: \"" . $mediaurl . "\"";
         $buff[] = "      } ]";
         $buff[] = "    }";
         $buff[] = "  );";
