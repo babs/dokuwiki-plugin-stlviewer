@@ -1,10 +1,9 @@
-Dokuwiki STL Viewer plugin
-==========================
+# Dokuwiki STL Viewer plugin
 
-Embed STL render using Viewstl.com excellent library v1.09
 
-Options
--------
+Embed STL render using Viewstl.com excellent library v1.13
+
+## Options
 
 Options are URL encoded a=1&b=2 etc
 
@@ -15,3 +14,14 @@ Options are URL encoded a=1&b=2 etc
 - w: width in pixel
 - color: color of the object
 - bgcolor: background color
+
+
+## Changelog
+
+* **2022-09-07**
+  * update stlviewer to v1.13 (@KaiMartin)
+  * short download link (@Laserlicht)
+* **2022-01-25**
+  * Fix for subfolder path (@Juergen-aus-Zuendorf)
+* **2020-04-25**
+  * Initial release
