@@ -161,7 +161,7 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         }
         $buff[] = "";
         $buff[] = "</script>";
-        $buff[] = "Download: <a href=\"" . DOKU_URL . ml($opts['id']) . "\">".$opts['id']."</a><br/>";
+        $buff[] = "<a href=\"" . DOKU_URL . ml($opts['id']) . "\" title=\"".$opts['id']."\">Download</a><br/>";
 
         $renderer->doc .= implode("\n", $buff);
 
