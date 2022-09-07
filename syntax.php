@@ -142,7 +142,8 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         $buff[] = "    destdiv,";
         $buff[] = "    {";
         $buff[] = "      load_three_files: \"" . DOKU_URL . "lib/plugins/stlviewer/stlviewer/\",";
-        $buff[] = "      auto_rotate: true,";
+        $buff[] = "      auto_rotate: false,";
+        $buff[] = "      controls: 1,";
         $buff[] = "      cameray: 100,";
         $buff[] = "      canvas_width: \"".$opts['width']."\",";
         $buff[] = "      canvas_height: \"".$opts['height']."\",";

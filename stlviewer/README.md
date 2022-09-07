@@ -1,4 +1,4 @@
-Stl Viewer v1.09
+Stl Viewer v1.13
 ================
 
 Installation:
@@ -29,7 +29,10 @@ At the html body:
 
 Documentation & License details:
 --------------------------------
-https://www.viewstl.com/plugin/
+https://www.viewstl.com/plugin/ 
+
+* Viewstl Javscript plugin is licensed under the MIT License - Copyright (c) 2019 Viewstl.com
+* three.js is licensed under the MIT License - Copyright © 2010-2019 three.js authors
 
 
 
