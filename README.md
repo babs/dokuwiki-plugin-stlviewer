@@ -18,6 +18,8 @@ Options are URL encoded a=1&b=2 etc
 
 ## Changelog
 
+* **2024-04-09**
+  * fix background color (@Ragos81)
 * **2022-09-07**
   * update stlviewer to v1.13 (@KaiMartin)
   * short download link (@Laserlicht)
