@@ -147,7 +147,7 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         $buff[] = "      cameray: 100,";
         $buff[] = "      canvas_width: \"".$opts['width']."\",";
         $buff[] = "      canvas_height: \"".$opts['height']."\",";
-        $buff[] = "      bgcolor: \"".$opts['bgcolor']."\",";
+        $buff[] = "      bg_color: \"".$opts['bgcolor']."\",";
         $buff[] = "      models: [ {";
         $buff[] = "        id:0,";
         $buff[] = "        color: \"".$opts['color']."\",";
