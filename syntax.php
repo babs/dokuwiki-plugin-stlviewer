@@ -11,6 +11,7 @@
  *  - w: width in pixel
  *  - color: color of the object
  *  - bgcolor: background color
+ *  - display: Model shading to display (String: "flat" / "smooth"/ "wireframe", Default: "flat")
  *
  */
 
@@ -50,6 +51,7 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
                        'height'  => '500px',
                        'bgcolor' => '#aaaaaa',
                        'color'   => '#be5050',
+                       'display' => 'flat',
         );
 
         $cleanmatch = trim($match, '{}');
@@ -79,15 +81,16 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         if (isset($pargs['w'])) {
             $opts['width'] = $pargs['w'];
         }
-
         if (isset($pargs['noop'])) {
             $opts['noop'] = true;
         }
-
         if (isset($pargs['manual'])) {
             $opts['manual'] = true;
         }
-
+        if (isset($pargs['display'])) {
+            $opts['display'] = $pargs['display'];
+        }
+        
         foreach (['bgcolor', 'color'] as $k) {
             if (isset($pargs[$k]) && $pargs[$k] != "") {
                 $opts[$k] = $pargs[$k];
@@ -151,6 +154,7 @@ class syntax_plugin_stlviewer extends DokuWiki_Syntax_Plugin {
         $buff[] = "      models: [ {";
         $buff[] = "        id:0,";
         $buff[] = "        color: \"".$opts['color']."\",";
+        $buff[] = "        display: \"".$opts['display']."\",";
         $buff[] = "        filename: \"" . $mediaurl . "\"";
         $buff[] = "      } ]";
         $buff[] = "    }";
