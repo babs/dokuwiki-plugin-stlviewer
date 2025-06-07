@@ -26,6 +26,10 @@ Options are URL encoded a=1&b=2 etc
 
 Example for a complete syntax: ``{{my_model.stl?h=400&w=600&bgcolor=#cccccc&color=#eb984e&display=wireframe&noop=true|My model title}}``
 
+## Rendering examples
+
+![multiple rendering examples](https://github.com/babs/dokuwiki-plugin-stlviewer/blob/master/misc/example01.png)
+
 ## Changelog
 
 * **2025-03-20**
