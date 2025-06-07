@@ -22,7 +22,7 @@ Options are URL encoded a=1&b=2 etc
 - bgcolor: Background color
   - Example: ``color=#ffffff`` for a white background
 - display: Set model display/shading ("flat", "smooth" or "wireframe")
-  - Example: ``model=wireframe``
+  - Example: ``display=wireframe``
 
 Example for a complete syntax: ``{{my_model.stl?h=400&w=600&bgcolor=#cccccc&color=#eb984e&display=wireframe&noop=true|My model title}}``
 
